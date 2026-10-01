@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script>
+            window.FirstCheck = <%- JSON.stringify(FirstCheck) %>;
+            window.SecondCheck = <%- JSON.stringify(SecondCheck) %>;
+            window.ThirdCheck = <%- JSON.stringify(ThirdCheck) %>;
+        </script>
+        <title>thinking</title>
+        <link rel="stylesheet" href="/static/styles.css">
+        <script type='module' src='/static/fate.js'></script>
+    </head>
+
+    <body>
+        <div class="fatetext">
+            <h1 id ="fate"></h1>
+        </div>
+    </body>
+</html>

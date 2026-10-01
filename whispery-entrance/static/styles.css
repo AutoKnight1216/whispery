@@ -1,0 +1,120 @@
+body {
+  background-color: black;
+}
+
+h1 {
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.text {
+  display: flex;  
+  justify-content: center; 
+  align-items: center;    
+  height: 300px;         
+}
+
+.button {
+  display: flex;  
+  justify-content: center; 
+  align-items: center;    
+  height: 100px;         
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgray;
+  text-align: center;
+  padding: 15px 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: darkgray; 
+  color: white;             
+  opacity: 1;               
+  cursor: not-allowed;       
+}
+
+.hints {
+  display: flex;  
+  justify-content: center; 
+  align-items: center;    
+  height: 5px;
+}
+
+a {
+  color: rgb(255, 217, 0);
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.hinttext {
+  display: flex;
+  justify-content: left; 
+  align-items: left; 
+  text-align: left;   
+  height: 200px;
+  font-size: 16;
+}
+
+.img {
+  display: flex;  
+  justify-content: center; 
+  align-items: center;    
+  height: 500px; 
+}
+
+.hidden {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300;
+  color: black;
+}
+
+.errorimg {
+  display: flex;  
+  justify-content: center; 
+  align-items: center;    
+  height: 50; 
+}
+
+form {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  height: 50; 
+}
+
+p {
+  color: white;
+  font-family: sans-serif;
+  text-align: left;
+}
+
+.fatetext{
+  display: flex;  
+  justify-content: center; 
+  align-items: center;    
+  height: 300px; 
+  font-size: 300;
+}
+
+.fateform {
+  display: flex;  
+  justify-content: center; 
+  align-items: center;    
+  height: 10px; 
+}
+
+#fate {
+  color: crimson;
+  font-family: sans-serif;
+  text-align: center;
+}
+/* why are you here bro the puzzle isnt that hard :sob: */
