@@ -1,13 +1,15 @@
 {
   "name": "whispery-entrance",
   "version": "1.0.0",
-  "description": "",
+  "description": "pog",
   "repository": {
     "type": "git",
     "url": "whispery"
   },
+  "engines": {
+    "node": "22.x"
+  },
   "license": "ISC",
-  "author": "",
   "type": "commonjs",
   "main": "index.js",
   "dependencies": {
