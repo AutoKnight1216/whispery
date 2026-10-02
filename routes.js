@@ -18,19 +18,14 @@ const level10 = path.join(__dirname, 'views', 'level10.ejs');
 const thinking = path.join(__dirname, 'views', 'FATE.ejs');
 const WIN = path.join(__dirname, 'views', 'win.ejs');
 
-let FirstCheck = false;
-let SecondCheck = false;
-let ThirdCheck = false;
-let fatetext = "thinking..."
-
 router.get('/', (req, res) => {
-    res.render(level1)
     res.cookie('level', '1', {
         signed: true,   
         secure: true,
         sameSite: 'none',
         maxAge: 24 * 60 * 60 * 1000 
     });
+    res.render(level1)
 })
 
 router.get('/hints', (req, res) => {
@@ -38,21 +33,20 @@ router.get('/hints', (req, res) => {
 })
 
 router.get('/jdkdjkd/1', (req, res) => {
-    res.cookie('level', '2', {
+    res.cookie('checks', JSON.stringify({
+        first: true,
+        second: false,
+        third: false
+    }), {
         signed: true,
         secure: true,
         sameSite: 'none',
-        maxAge: 24 * 60 * 60 * 1000 // 1 day
+        maxAge: 24 * 60 * 60 * 1000
     });
     res.redirect('/poggaming')
 })
 
 router.get('/poggaming', (req, res) => {
-    let cookie = req.signedCookies["level"];
-    if (cookie == 2) {
-        FirstCheck = true
-        console.log(1);
-    }
     res.render(level2)
 })
 
@@ -65,21 +59,20 @@ router.get('/thisisthecodereplacepoggamer/1216', (req, res) => {
 })
 
 router.get('/jdkdjkd/2', (req, res) => {
-    res.cookie('level', '4', {
+    res.cookie('checks', JSON.stringify({
+        first: true,
+        second: true,
+        third: false
+    }), {
         signed: true,
         secure: true,
         sameSite: 'none',
-        maxAge: 24 * 60 * 60 * 1000 // 1 day
+        maxAge: 24 * 60 * 60 * 1000
     });
     res.redirect('/robey')
 })
 
 router.get('/robey', (req, res) => {
-    let cookie = req.signedCookies["level"];
-    if (cookie == 4) {
-        SecondCheck = true
-        console.log(2);
-    }
     res.render(level5)
 })
 
@@ -108,25 +101,30 @@ router.get('/theendishere/126657080', (req, res) => {
 })
 
 router.get('/jdkdjkd/3', (req, res) => {
-    res.cookie('level', '9', {
+   res.cookie('checks', JSON.stringify({
+        first: true,
+        second: true,
+        third: true
+    }), {
         signed: true,
         secure: true,
         sameSite: 'none',
-        maxAge: 24 * 60 * 60 * 1000 // 1 day
+        maxAge: 24 * 60 * 60 * 1000
     });
     res.redirect('/autoknight/whispery/FATE')
 })
 
 router.get('/autoknight/whispery/FATE', (req, res) => {
-    let cookie = req.signedCookies["level"];
-    if (cookie == 9) {
-        ThirdCheck = true
-        console.log(3);
-    }
     res.render(level10)
 })
 
 router.get('/jdkdjkd/thinking', (req, res) => {
+    const checks = req.signedCookies.checks;
+
+    const FirstCheck = checks?.first ?? false;
+    const SecondCheck = checks?.second ?? false;
+    const ThirdCheck = checks?.third ?? false;
+    
     res.render(thinking, { FirstCheck, SecondCheck, ThirdCheck})
 })
 
