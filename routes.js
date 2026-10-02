@@ -130,4 +130,4 @@ router.use((req, res) => {
     sendError(res, error)
 })
 
-module.exports = { router, FirstCheck, SecondCheck, ThirdCheck }
+module.exports = { router }
