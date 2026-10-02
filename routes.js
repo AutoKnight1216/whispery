@@ -115,10 +115,18 @@ router.get('/autoknight/whispery/FATE', (req, res) => {
 router.get('/jdkdjkd/thinking', (req, res) => {
     const checks = req.signedCookies.checks;
 
-    const FirstCheck = checks?.first ?? false;
-    const SecondCheck = checks?.second ?? false;
-    const ThirdCheck = checks?.third ?? false;
-    
+    let FirstCheck = false;
+    let SecondCheck = false;
+    let ThirdCheck = false;
+
+    if (checks) {
+        const data = JSON.parse(checks);
+        
+        FirstCheck = data.first;
+        SecondCheck = data.second;
+        ThirdCheck = data.third;
+    }
+    console.log(FirstCheck, SecondCheck, ThirdCheck);
     res.render(thinking, { FirstCheck, SecondCheck, ThirdCheck})
 })
 
