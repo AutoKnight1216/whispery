@@ -18,25 +18,10 @@ const level10 = path.join(__dirname, 'views', 'level10.ejs');
 const thinking = path.join(__dirname, 'views', 'FATE.ejs');
 const WIN = path.join(__dirname, 'views', 'win.ejs');
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
 let FirstCheck = false;
 let SecondCheck = false;
 let ThirdCheck = false;
 let fatetext = "thinking..."
-
-async function FATE(){
-    console.log("thinking")
-    await sleep(5000);
-    if (FirstCheck && SecondCheck && ThirdCheck == true){
-        console.log("WORTHY")
-        fatetext = "i trust you."
-    }else{
-        console.log("NOT WORTHY")
-        fatetext = "i dont trust you."
-    }
-    return fatetext;
-}
 
 router.get('/', (req, res) => {
     res.render(level1)
@@ -55,6 +40,8 @@ router.get('/hints', (req, res) => {
 router.get('/jdkdjkd/1', (req, res) => {
     res.cookie('level', '2', {
         signed: true,
+        secure: true,
+        sameSite: 'none',
         maxAge: 24 * 60 * 60 * 1000 // 1 day
     });
     res.redirect('/poggaming')
@@ -64,6 +51,7 @@ router.get('/poggaming', (req, res) => {
     let cookie = req.signedCookies["level"];
     if (cookie == 2) {
         FirstCheck = true
+        console.log(1);
     }
     res.render(level2)
 })
@@ -79,6 +67,8 @@ router.get('/thisisthecodereplacepoggamer/1216', (req, res) => {
 router.get('/jdkdjkd/2', (req, res) => {
     res.cookie('level', '4', {
         signed: true,
+        secure: true,
+        sameSite: 'none',
         maxAge: 24 * 60 * 60 * 1000 // 1 day
     });
     res.redirect('/robey')
@@ -88,6 +78,7 @@ router.get('/robey', (req, res) => {
     let cookie = req.signedCookies["level"];
     if (cookie == 4) {
         SecondCheck = true
+        console.log(2);
     }
     res.render(level5)
 })
@@ -119,6 +110,8 @@ router.get('/theendishere/126657080', (req, res) => {
 router.get('/jdkdjkd/3', (req, res) => {
     res.cookie('level', '9', {
         signed: true,
+        secure: true,
+        sameSite: 'none',
         maxAge: 24 * 60 * 60 * 1000 // 1 day
     });
     res.redirect('/autoknight/whispery/FATE')
@@ -128,6 +121,7 @@ router.get('/autoknight/whispery/FATE', (req, res) => {
     let cookie = req.signedCookies["level"];
     if (cookie == 9) {
         ThirdCheck = true
+        console.log(3);
     }
     res.render(level10)
 })
@@ -144,4 +138,4 @@ router.use((req, res) => {
     sendError(res, error)
 })
 
-module.exports = { router, FirstCheck, SecondCheck, ThirdCheck, FATE }
+module.exports = { router, FirstCheck, SecondCheck, ThirdCheck }
