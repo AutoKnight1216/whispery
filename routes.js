@@ -19,12 +19,6 @@ const thinking = path.join(__dirname, 'views', 'FATE.ejs');
 const WIN = path.join(__dirname, 'views', 'win.ejs');
 
 router.get('/', (req, res) => {
-    res.cookie('level', '1', {
-        signed: true,   
-        secure: true,
-        sameSite: 'none',
-        maxAge: 24 * 60 * 60 * 1000 
-    });
     res.render(level1)
 })
 
