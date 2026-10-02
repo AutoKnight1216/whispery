@@ -41,7 +41,9 @@ async function FATE(){
 router.get('/', (req, res) => {
     res.render(level1)
     res.cookie('level', '1', {
-        signed: true,     
+        signed: true,   
+        secure: true,
+        sameSite: 'none',
         maxAge: 24 * 60 * 60 * 1000 
     });
 })
