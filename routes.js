@@ -127,7 +127,7 @@ router.get('/jdkdjkd/thinking', (req, res) => {
     res.render(thinking, { FirstCheck, SecondCheck, ThirdCheck})
 })
 
-router.get('/husehfisuhfisf/wdjwiadiaudhuawdhuiahduid/adhadhiudhwuidhuf/GG', (req, res) => {
+router.get('/husehfisuhfisf/wdjwiadiaudhuawdhuiahduid/adhadhiudhwuidhufaura/GG', (req, res) => {
     res.render(WIN)
 })
 
