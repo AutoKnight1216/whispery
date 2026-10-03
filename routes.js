@@ -61,8 +61,7 @@ router.post('/check-level4', (req, res) => {
     const input = String(req.body.input).replaceAll(' ', '');
 
     if (input === id) {
-        res.json({ success: true });
-        res.redirect('/jdkdjkd/nig')
+        res.redirect('/jdkdjkd/nig');
     } else {
         res.json({ success: false });
     }
