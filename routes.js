@@ -18,7 +18,7 @@ const level10 = path.join(__dirname, 'views', 'level10.ejs');
 const thinking = path.join(__dirname, 'views', 'FATE.ejs');
 const WIN = path.join(__dirname, 'views', 'win.ejs');
 
-const checks = {
+let checks = {
     first: false,
     second: false,
     third: false
