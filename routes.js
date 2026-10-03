@@ -67,7 +67,7 @@ router.post('/check-level4', (req, res) => {
     if (input === id) {
         res.redirect('/jdkdjkd/nig');
     }else{
-        return
+        return console.log("FAILURE.")
     }
 });
 
