@@ -15,6 +15,7 @@ app.use(cookieParser(COOKIE_SECRET));
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/static", express.static(path.join(__dirname, "static")));
+app.use(express.json());
 app.use(router);
 
 app.listen(PORT, () => {
