@@ -18,7 +18,7 @@ const level10 = path.join(__dirname, 'views', 'level10.ejs');
 const thinking = path.join(__dirname, 'views', 'FATE.ejs');
 const WIN = path.join(__dirname, 'views', 'win.ejs');
 
-let checks = {
+const checks = {
     first: false,
     second: false,
     third: false
@@ -34,11 +34,7 @@ router.get('/hints', (req, res) => {
 
 router.get('/jdkdjkd/hi', (req, res) => {
     checks.first = true
-    res.cookie('checks', JSON.stringify({
-        first: checks.first,
-        second: checks.second,
-        third: checks.third
-    }), {
+    res.cookie('checks', JSON.stringify(checks), {
         signed: true,
         secure: true,
         sameSite: 'none',
@@ -61,11 +57,7 @@ router.get('/thisisthecodereplacepoggamer/1216', (req, res) => {
 
 router.get('/jdkdjkd/nig', (req, res) => {
     checks.second = true
-    res.cookie('checks', JSON.stringify({
-        first: checks.first,
-        second: checks.second,
-        third: checks.third
-    }), {
+    res.cookie('checks', JSON.stringify(checks), {
         signed: true,
         secure: true,
         sameSite: 'none',
@@ -104,11 +96,7 @@ router.get('/theendishere/126657080', (req, res) => {
 
 router.get('/jdkdjkd/ah', (req, res) => {
     checks.third = true
-   res.cookie('checks', JSON.stringify({
-        first: checks.first,
-        second: checks.second,
-        third: checks.third
-    }), {
+   res.cookie('checks', JSON.stringify(checks), {
         signed: true,
         secure: true,
         sameSite: 'none',
