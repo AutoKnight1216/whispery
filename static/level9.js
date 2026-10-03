@@ -6,7 +6,7 @@ function lvl9Check(){
     input = input.toLowerCase();
     input = input.replaceAll(' ', '');
     if (input === name){
-        window.location.href = "/jdkdjkd/3";
+        window.location.href = "/jdkdjkd/ah";
     }else{
         console.log("FAILURE.")
         return;
