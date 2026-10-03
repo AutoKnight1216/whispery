@@ -18,12 +18,24 @@ const level10 = path.join(__dirname, 'views', 'level10.ejs');
 const thinking = path.join(__dirname, 'views', 'FATE.ejs');
 const WIN = path.join(__dirname, 'views', 'win.ejs');
 
-let checks = {
-    first: false,
-    second: false,
-    third: false
-};
+function updateCheck(req, res, property) {
+    let checks = {
+        first: false,
+        second: false,
+        third: false
+    };
 
+    if (req.signedCookies.checks) {
+        checks = JSON.parse(req.signedCookies.checks);
+    }
+    checks[property] = true;
+    res.cookie('checks', JSON.stringify(checks), {
+        signed: true,
+        secure: true,
+        sameSite: 'none',
+        maxAge: 24 * 60 * 60 * 1000
+    });
+}
 router.get('/', (req, res) => {
     res.render(level1)
 })
@@ -33,14 +45,8 @@ router.get('/hints', (req, res) => {
 })
 
 router.get('/jdkdjkd/hi', (req, res) => {
-    checks.first = true
-    res.cookie('checks', JSON.stringify(checks), {
-        signed: true,
-        secure: true,
-        sameSite: 'none',
-        maxAge: 24 * 60 * 60 * 1000
-    });
-    res.redirect('/poggaming')
+    updateCheck(req, res, 'first');
+    res.redirect('/poggaming');
 })
 
 router.get('/poggaming', (req, res) => {
@@ -61,18 +67,14 @@ router.post('/check-level4', (req, res) => {
 
     if (input === id) {
         res.redirect('/jdkdjkd/nig');
-    } 
+    }else{
+        return
+    }
 });
 
 router.get('/jdkdjkd/nig', (req, res) => {
-    checks.second = true
-    res.cookie('checks', JSON.stringify(checks), {
-        signed: true,
-        secure: true,
-        sameSite: 'none',
-        maxAge: 24 * 60 * 60 * 1000
-    });
-    res.redirect('/robey')
+    updateCheck(req, res, 'second');
+    res.redirect('/robey');
 })
 
 router.get('/robey', (req, res) => {
@@ -104,14 +106,8 @@ router.get('/theendishere/126657080', (req, res) => {
 })
 
 router.get('/jdkdjkd/ah', (req, res) => {
-    checks.third = true
-   res.cookie('checks', JSON.stringify(checks), {
-        signed: true,
-        secure: true,
-        sameSite: 'none',
-        maxAge: 24 * 60 * 60 * 1000
-    });
-    res.redirect('/autoknight/whispery/FATE')
+    updateCheck(req, res, 'third');
+    res.redirect('/autoknight/whispery/FATE');
 })
 
 router.get('/autoknight/whispery/FATE', (req, res) => {
