@@ -25,7 +25,7 @@ text.innerHTML = result
 await sleep(3000);
 
 if (text.innerHTML == "i trust you."){
-    window.location.href = '/husehfisuhfisf/wdjwiadiaudhuawdhuiahduid/adhadhiudhwuidhuf/GG';
+    window.location.href = '/husehfisuhfisf/wdjwiadiaudhuawdhuiahduid/adhadhiudhwuidhufaura/GG';
 }else if (text.innerHTML == "i dont trust you."){
     window.location.replace('/')
 }
