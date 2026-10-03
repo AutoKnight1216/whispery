@@ -14,7 +14,7 @@ function lvl4Check() {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            window.location.href = '/jdkdjkd/nig';
+            console.log('ACCEPTED.');
         } else {
             console.log('FAILURE.');
         }
