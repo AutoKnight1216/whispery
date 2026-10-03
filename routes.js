@@ -18,6 +18,12 @@ const level10 = path.join(__dirname, 'views', 'level10.ejs');
 const thinking = path.join(__dirname, 'views', 'FATE.ejs');
 const WIN = path.join(__dirname, 'views', 'win.ejs');
 
+let checks = {
+    first: false,
+    second: false,
+    third: false
+};
+
 router.get('/', (req, res) => {
     res.render(level1)
 })
@@ -26,11 +32,12 @@ router.get('/hints', (req, res) => {
     res.render(hints)
 })
 
-router.get('/jdkdjkd/1', (req, res) => {
+router.get('/jdkdjkd/hi', (req, res) => {
+    checks.first = true
     res.cookie('checks', JSON.stringify({
-        first: true,
-        second: false,
-        third: false
+        first: checks.first,
+        second: checks.second,
+        third: checks.third
     }), {
         signed: true,
         secure: true,
@@ -52,11 +59,12 @@ router.get('/thisisthecodereplacepoggamer/1216', (req, res) => {
     res.render(level4)
 })
 
-router.get('/jdkdjkd/2', (req, res) => {
+router.get('/jdkdjkd/nig', (req, res) => {
+    checks.second = true
     res.cookie('checks', JSON.stringify({
-        first: true,
-        second: true,
-        third: false
+        first: checks.first,
+        second: checks.second,
+        third: checks.third
     }), {
         signed: true,
         secure: true,
@@ -94,11 +102,12 @@ router.get('/theendishere/126657080', (req, res) => {
     res.render(level9)
 })
 
-router.get('/jdkdjkd/3', (req, res) => {
+router.get('/jdkdjkd/ah', (req, res) => {
+    checks.third = true
    res.cookie('checks', JSON.stringify({
-        first: true,
-        second: true,
-        third: true
+        first: checks.first,
+        second: checks.second,
+        third: checks.third
     }), {
         signed: true,
         secure: true,
