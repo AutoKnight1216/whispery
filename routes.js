@@ -57,14 +57,11 @@ router.get('/thisisthecodereplacepoggamer/1216', (req, res) => {
 
 router.post('/check-level4', (req, res) => {
     const id = "6597877862";
-
     const input = String(req.body.input).replaceAll(' ', '');
 
     if (input === id) {
         res.redirect('/jdkdjkd/nig');
-    } else {
-        res.json({ success: false });
-    }
+    } 
 });
 
 router.get('/jdkdjkd/nig', (req, res) => {
