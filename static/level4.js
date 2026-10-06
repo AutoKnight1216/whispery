@@ -1,4 +1,4 @@
-function lvl4Check() {
+function lvl4Check(){
     const form = document.getElementById('level4Form');
     const formData = new FormData(form);
     const input = String(formData.get('level4')).replaceAll(' ', '');
@@ -13,6 +13,8 @@ function lvl4Check() {
     .then(response => {
         if (response.redirected) {
             window.location.href = response.url;
+        }else{
+            console.log("FAILURE.");
         }
     });
 }

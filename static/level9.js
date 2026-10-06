@@ -1,16 +1,22 @@
 function lvl9Check(){
-    const name = "autoknight"
     const form = document.getElementById('level9Form');
-    let formData = new FormData(form);
-    let input = String((formData.get('level9')));
-    input = input.toLowerCase();
-    input = input.replaceAll(' ', '');
-    if (input === name){
-        window.location.href = "/jdkdjkd/ah";
-    }else{
-        console.log("FAILURE.")
-        return;
-    }
+    const formData = new FormData(form);
+    let input = String(formData.get('level9')).toLowerCase();
+
+    fetch('/check-level9', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ input })
+    })
+    .then(response => {
+        if (response.redirected) {
+            window.location.href = response.url;
+        }else{
+            console.log("FAILURE.");
+        }
+    });
 }
 
 // can someone explain why getting form data causes html to look for a name attribute but not a id attribute????

@@ -67,7 +67,7 @@ router.post('/check-level4', (req, res) => {
     if (input === id) {
         res.redirect('/jdkdjkd/nig');
     }else{
-        return console.log("FAILURE.")
+        return
     }
 });
 
@@ -103,6 +103,17 @@ router.get('/theendishere', (req, res) => {
 router.get('/theendishere/126657080', (req, res) => {
     res.render(level9)
 })
+
+router.post('/check-level9', (req, res) => {
+    const id = "autoknight";
+    const input = String(req.body.input).replaceAll(' ', '');
+
+    if (input === id) {
+        res.redirect('/jdkdjkd/ah');
+    }else{
+        return
+    }
+});
 
 router.get('/jdkdjkd/ah', (req, res) => {
     updateCheck(req, res, 'third');
