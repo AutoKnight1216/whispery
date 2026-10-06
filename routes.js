@@ -3,20 +3,20 @@ const router = express.Router();
 const path = require('path');
 const { sendError } = require('./utils');
 
-const error = path.join(__dirname, 'views', 'error.ejs'); 
-const level1 = path.join(__dirname, 'views', 'level1.ejs'); 
-const hints = path.join(__dirname, 'views', 'hints.ejs'); 
-const level2 = path.join(__dirname, 'views', 'level2.ejs'); 
-const level3 = path.join(__dirname, 'views', 'level3.ejs'); 
-const level4 = path.join(__dirname, 'views', 'level4.ejs'); 
-const level5 = path.join(__dirname, 'views', 'level5.ejs');
-const level6 = path.join(__dirname, 'views', 'level6.ejs');
-const level7 = path.join(__dirname, 'views', 'level7.ejs');
-const level8 = path.join(__dirname, 'views', 'level8.ejs');
-const level9 = path.join(__dirname, 'views', 'level9.ejs');
-const level10 = path.join(__dirname, 'views', 'level10.ejs');
+const error = path.join(__dirname, 'views', 'error.html'); 
+const level1 = path.join(__dirname, 'views', 'level1.html'); 
+const hints = path.join(__dirname, 'views', 'hints.html'); 
+const level2 = path.join(__dirname, 'views', 'level2.html'); 
+const level3 = path.join(__dirname, 'views', 'level3.html'); 
+const level4 = path.join(__dirname, 'views', 'level4.html'); 
+const level5 = path.join(__dirname, 'views', 'level5.html');
+const level6 = path.join(__dirname, 'views', 'level6.html');
+const level7 = path.join(__dirname, 'views', 'level7.html');
+const level8 = path.join(__dirname, 'views', 'level8.html');
+const level9 = path.join(__dirname, 'views', 'level9.html');
+const level10 = path.join(__dirname, 'views', 'level10.html');
 const thinking = path.join(__dirname, 'views', 'FATE.ejs');
-const WIN = path.join(__dirname, 'views', 'win.ejs');
+const WIN = path.join(__dirname, 'views', 'win.html');
 
 function updateCheck(req, res, property) {
     let checks = {
