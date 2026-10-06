@@ -36,11 +36,11 @@ function updateCheck(req, res, property) {
     });
 }
 router.get('/', (req, res) => {
-    res.render(level1)
+    res.sendFile(level1)
 })
 
 router.get('/hints', (req, res) => {
-    res.render(hints)
+    res.sendFile(hints)
 })
 
 router.get('/jdkdjkd/hi', (req, res) => {
@@ -49,15 +49,15 @@ router.get('/jdkdjkd/hi', (req, res) => {
 })
 
 router.get('/poggaming', (req, res) => {
-    res.render(level2)
+    res.sendFile(level2)
 })
 
 router.get('/thisisthecodereplacepoggamer', (req, res) => {
-    res.render(level3)
+    res.sendFile(level3)
 })
 
 router.get('/thisisthecodereplacepoggamer/1216', (req, res) => {
-    res.render(level4)
+    res.sendFile(level4)
 })
 
 router.post('/check-level4', (req, res) => {
@@ -77,11 +77,11 @@ router.get('/jdkdjkd/nig', (req, res) => {
 })
 
 router.get('/robey', (req, res) => {
-    res.render(level5)
+    res.sendFile(level5)
 })
 
 router.get('/robey/100', (req, res) => {
-    res.render(level6)
+    res.sendFile(level6)
 })
 
 router.get('/robey/100/millisecond', (req, res) => {
@@ -89,7 +89,7 @@ router.get('/robey/100/millisecond', (req, res) => {
 })
 
 router.get('/robey/100/milliseconds', (req, res) => {
-    res.render(level7)
+    res.sendFile(level7)
 })
 
 router.get('/theendisnear', (req, res) => {
@@ -97,11 +97,11 @@ router.get('/theendisnear', (req, res) => {
 })
 
 router.get('/theendishere', (req, res) => {
-    res.render(level8)
+    res.sendFile(level8)
 })
 
 router.get('/theendishere/126657080', (req, res) => {
-    res.render(level9)
+    res.sendFile(level9)
 })
 
 router.post('/check-level9', (req, res) => {
@@ -121,7 +121,7 @@ router.get('/jdkdjkd/ah', (req, res) => {
 })
 
 router.get('/autoknight/whispery/FATE', (req, res) => {
-    res.render(level10)
+    res.sendFile(level10)
 })
 
 router.get('/jdkdjkd/thinking', (req, res) => {
@@ -143,7 +143,7 @@ router.get('/jdkdjkd/thinking', (req, res) => {
 })
 
 router.get('/husehfisuhfisf/wdjwiadiaudhuawdhuiahduid/adhadhiudhwuidhufaura/GG', (req, res) => {
-    res.render(WIN)
+    res.sendFile(WIN)
 })
 
 router.use((req, res) => {
